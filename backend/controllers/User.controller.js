@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models/User.schema');
 
-const SECRET_KEY = 'your-secret-key'; 
+const SECRET_KEY = 'thisisanassignmentbyvoosh'; 
 
 const registerUser = async (req, res) => {
   const { name, phoneNumber, password } = req.body;

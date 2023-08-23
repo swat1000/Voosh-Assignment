@@ -7,7 +7,7 @@ function OrderDetails() {
 
   const handleGetOrder = async () => {
     try {
-      const response = await axios.get(`/api/get-order?user_id=${user_id}`);
+      const response = await axios.get(`http://localhost:5000/api/get-order?user_id=${user_id}`);
       setOrders(response.data);
     } catch (error) {
       console.error(error);
@@ -23,12 +23,12 @@ function OrderDetails() {
         value={user_id}
         onChange={(e) => setUser_id(e.target.value)}
       />
-      <button onClick={handleGetOrder}>Get Order Details</button>
+      <button onClick={handleGetOrder} className='btn btn-primary m-3'>Get Order Details</button>
       <ul>
-        {orders.map((order, index) => (
+        {orders.map((orders, index) => (
           <li key={index}>
-            User ID: {order.user_id}, Sub Total: {order.sub_total}, Phone Number:{' '}
-            {order.phoneNumber}
+            User ID: {orders.user_id}, Sub Total: {orders.sub_total}, Phone Number:{' '}
+            {orders.phoneNumber}
           </li>
         ))}
       </ul>

@@ -9,7 +9,7 @@ function AddOrderForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/add-order', {
+      await axios.post('http://localhost:5000/api/add-order', {
         user_id,
         sub_total,
         phoneNumber,
@@ -42,7 +42,7 @@ function AddOrderForm() {
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
-        <button type="submit">Add Order</button>
+        <button type="submit" className='btn btn-primary m-3'>Add Order</button>
       </form>
     </div>
   );

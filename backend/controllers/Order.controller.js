@@ -1,6 +1,6 @@
 const { Order } = require('../models/Order.schema');
 
-const SECRET_KEY = 'your-secret-key'; 
+const SECRET_KEY = 'thisisassignmentbyvoosh'; 
 
 
 
@@ -27,7 +27,7 @@ const getOrder = async (req, res) => {
   const user_id = req.query.user_id;
 
   try {
-    // Find orders for the given user_id
+    
     const orders = await Order.find({ user_id });
 
     res.status(200).json(orders);
