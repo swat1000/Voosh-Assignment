@@ -5,12 +5,12 @@ const SECRET_KEY = 'thisisassignmentbyvoosh';
 
 
 const addOrder = async (req, res) => {
-  const { user_id, sub_total, phoneNumber } = req.body;
+  const { username, sub_total, phoneNumber } = req.body;
 
   try {
     
     const newOrder = new Order({
-      user_id,
+      username,
       sub_total,
       phoneNumber,
     });
@@ -24,11 +24,11 @@ const addOrder = async (req, res) => {
 
 
 const getOrder = async (req, res) => {
-  const user_id = req.query.user_id;
+  const username = req.query.username;
 
   try {
     
-    const orders = await Order.find({ user_id });
+    const orders = await Order.find({ username });
 
     res.status(200).json(orders);
   } catch (error) {

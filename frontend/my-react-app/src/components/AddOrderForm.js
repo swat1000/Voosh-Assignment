@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function AddOrderForm() {
-  const [user_id, setUser_id] = useState('');
+  const [username, setUsername] = useState('');
   const [sub_total, setSubTotal] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
@@ -10,7 +10,7 @@ function AddOrderForm() {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5000/api/add-order', {
-        user_id,
+        username,
         sub_total,
         phoneNumber,
       });
@@ -26,9 +26,9 @@ function AddOrderForm() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="User ID"
-          value={user_id}
-          onChange={(e) => setUser_id(e.target.value)}
+          placeholder="UserName"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="number"
